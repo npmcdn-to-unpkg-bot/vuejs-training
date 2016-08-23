@@ -11,11 +11,13 @@
 <body>
 
 <style type="text/css">
-  body { padding: 20% 0; }
+  body { padding: 10%; }
   h2 { text-align: center; }
   pre { font-size: 12px }
-  .input { width: 200px }
-  .footer { bottom: 0; position: absolute; }
+  @media screen and (min-width: 480px) { .input { width: 30%;} }
+  
+  .footer { position: absolute; right: 0; bottom: 0; left: 0; 
+    padding: 0.5rem; background-color: #efefef; text-align: center; }
 </style>
 
     <div id="app">
@@ -30,9 +32,9 @@
           <button type="submit" v-show='message'>Submit message</button>
         </div>
       </form>
-    
+
     <div class="footer">
-      <pre>{{ $data | json }}</pre> 
+      <pre>{{ $data | json }}</pre>
     </div>
 
     <script>
