@@ -4,24 +4,46 @@
 <head>
   <meta charset="UTF-8">
   <title>Hello World VueJS!</title>
-  <script type="text/javascript" src="https://npmcdn.com/vue/dist/vue.min.js"></script>
+  <script src="https://npmcdn.com/vue/dist/vue.min.js"></script>
+  <link rel="stylesheet" href='https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css'>
 </head>
 
 <body>
+
+<style type="text/css">
+  body { padding: 20% 0; }
+  h2 { text-align: center; }
+  pre { font-size: 12px }
+  .input { width: 200px }
+  .footer { bottom: 0; position: absolute; }
+</style>
+
     <div id="app">
-      <h1 style='text-align: center'>{{ message }}</h1>
-      <input v-model='message'>
-      <pre>{{ $data | json }}</pre>
+      <form>
+        <span v-show='!message'>
+          <h2>You must enter a message!</h2>
+        </span>
+        <div style="text-align:center">
+          <textarea class='input' v-model='message'></textarea>
+        </div>
+        <div style="text-align: center">
+          <button type="submit" v-show='message'>Submit message</button>
+        </div>
+      </form>
+    
+    <div class="footer">
+      <pre>{{ $data | json }}</pre> 
     </div>
 
-    <script type="text/javascript">
+    <script>
       new Vue({
         el: '#app',
         data: {
-          message: 'Hello World!'
+          message: ''
         }
       })
     </script>
+
   </body>
 
   </html>
