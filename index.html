@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Hello World VueJS!</title>
+  <script type="text/javascript" src="https://npmcdn.com/vue/dist/vue.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+      <h1 style='text-align: center'>{{ message }}</h1>
+      <input v-model='message'>
+      <pre>{{ $data | json }}</pre>
+    </div>
+
+    <script type="text/javascript">
+      new Vue({
+        el: '#app',
+        data: {
+          message: 'Hello World!'
+        }
+      })
+    </script>
+  </body>
+
+  </html>
