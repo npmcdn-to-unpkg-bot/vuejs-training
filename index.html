@@ -2,31 +2,53 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <title>Hello World VueJS!</title>
-  <script type="text/javascript" src="https://npmcdn.com/vue/dist/vue.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Hello World VueJS!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+    <script type="text/javascript" src="https://npmcdn.com/vue/dist/vue.js"></script>
 </head>
 
 <body>
-    <div id="app">
-      <button type="submit" @click='updateCount'>
-        Increment Counter: {{ count }}
-      </button>     
+    <div id="app" style="text-align: center; padding-top: 20%;">
+        <counter name='Likes'></counter>
+        <counter name='Deslikes'></counter>
     </div>
-
+    <template id="counter-template">
+        <h1>{{count}}</h1>
+        <button @click='count += 1'>{{ name }}</button>
+    </template>
     <script type="text/javascript">
-      new Vue({
-        el: '#app',
-        data: {
-          count: 0
-        },
-        methods: {
-          updateCount: function (){
-            this.count += 1
-          }
+    Vue.component('counter', {
+        template: '#counter-template',
+        props: ['name'],
+        data: function() {
+            return {
+                count: 0
+            }
         }
-      })
-    </script>
-  </body>
+    });
 
-  </html>
+    new Vue({
+        el: '#app'
+    })
+
+    /*
+          new Vue({
+            el: '#app',
+            components: {
+              counter: {
+                template: '#counter-template',
+                props: ['name'],
+                data: function() {
+                  return {
+                    count: 0
+                  }
+                }
+              }
+            }
+          })
+          */
+    </script>
+</body>
+
+</html>
