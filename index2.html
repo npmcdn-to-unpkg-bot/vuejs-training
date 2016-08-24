@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+  <script type="text/javascript" src="https://npmcdn.com/vue/dist/vue.min.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <div style="text-align: center">
+      <h1>{{ text }}</h1></div>
+      <div style="text-align: center">
+        <button @click='change'>Teste Me</button>
+      </div>
+    </div>
+    <script>
+      new Vue({
+        el: '#app',
+        data: {
+          text: 'Apenas um teste.'
+        },
+        methods: {
+          change: function() {
+            if (this.text === 'Apenas um teste.')
+              this.text = 'Outro teste.'
+            else
+              this.text = 'Apenas um teste.'
+          }
+        }
+      })
+    </script>
+  </body>
+
+  </html>
