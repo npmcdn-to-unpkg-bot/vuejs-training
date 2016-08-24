@@ -9,26 +9,24 @@
 </head>
 
 <body>
-    <div id="skill" style="text-align: center; padding-top: 20%;">
-      <h1>Skill: {{ skill }}</h1>
-      <input type="text" v-model='points'>
+    <div id="app" style="text-align: center; padding-top: 20%;">
+      <h1> {{fullName}}</h1>
+      <input type="text" v-model='first' placeholder="First name">
+      <input type="text" v-model='last' placeholder="Last Name">
     </div>
     
     <script>
       new Vue({
-        el: '#skill',
+        el: '#app',
         data: {
-          points: 50
+          first: '',
+          last: ''
         },
         computed: {
-          skill: function() {
-            if (this.points >= 100 && this.points <= 500)
-              return 'Intermediate'
-            else if (this.points >= 500)
-              return 'Advanced'
-            else
-              return 'Beginners'
+          fullName: function(){
+            return this.first + ' ' + this.last
           }
+  
         }
       })
     </script>
