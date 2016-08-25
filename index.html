@@ -5,12 +5,17 @@
   <meta charset="UTF-8">
   <title>Hello World VueJS!</title>
   <script type="text/javascript" src="https://npmcdn.com/vue/dist/vue.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
 </head>
 
 <body>
     <div id="app">
-      <h1 style='text-align: center'>{{ message }}</h1>
-      <input v-model='message'>
+      
+      <div style="text-align: center; padding-top:20%;">
+        <h1>{{ message }}</h1>
+        <input v-model='message'>
+      </div>
+      
       <pre>{{ $data | json }}</pre>
     </div>
 
