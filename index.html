@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Hello World VueJS!</title>
-  <script src="https://npmcdn.com/vue/dist/vue.min.js"></script>
+  <script src="https://npmcdn.com/vue/dist/vue.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
 
   <style>
@@ -15,17 +15,17 @@
 <body>
 
     <div id="app" style="text-align: center; padding-top: 15%;">
-      <ul>
-        
-        <li :class="{ 'completed': task.completed }"
-         v-for="task in tasks" 
-         @click="task.completed = ! task.completed">
-
-          <h4>{{ task.body }}</h4>
-        
-        </li>
-      </ul>
+      <tasks :list='tasks'></tasks>
     </div>
+
+    <template id="tasks-template">
+        <ul>
+            <li :class="{ 'completed': task.completed }" v-for="task in list" @click="task.completed = ! task.completed">
+                <h4>{{ task.body }}</h4>
+            </li>
+        </ul>
+    </template>
+
 
     <script src="main.js"></script>
     
