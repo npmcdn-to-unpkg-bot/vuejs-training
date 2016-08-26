@@ -14,11 +14,15 @@
 
 <body>
 
-    <div id="app">
+    <div id="app" style="text-align: center; padding-top: 15%;">
       <ul>
+        
         <li :class="{ 'completed': task.completed }"
-         v-for="task in tasks" @click="task.completed = ! task.completed">
-          {{ task.body }}
+         v-for="task in tasks" 
+         @click="task.completed = ! task.completed">
+
+          <h4>{{ task.body }}</h4>
+        
         </li>
       </ul>
     </div>
